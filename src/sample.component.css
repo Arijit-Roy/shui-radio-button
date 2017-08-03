@@ -1,0 +1,93 @@
+.SHRadioButton label {
+  font-family: "Calibri W01 Regular_904604", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal; }
+
+/* ************************************************************************** */
+/* MOTION                                                                     */
+/* ************************************************************************** */
+.SHRadioButton {
+  height: 1rem;
+  display: inline-block; }
+  .SHRadioButton--withLabel label {
+    display: inline-block;
+    padding-left: 3rem;
+    padding-right: 0.5rem; }
+  .SHRadioButton:not(.SHRadioButton--withLabel) {
+    display: inline-block; }
+    .SHRadioButton:not(.SHRadioButton--withLabel) label {
+      display: inline-block;
+      padding-left: 2rem; }
+  .SHRadioButton--disabled {
+    cursor: not-allowed; }
+    .SHRadioButton--disabled label {
+      cursor: not-allowed; }
+  .SHRadioButton:not(.SHRadioButton--disabled) {
+    cursor: pointer; }
+    .SHRadioButton:not(.SHRadioButton--disabled) label {
+      cursor: pointer; }
+  .SHRadioButton label {
+    user-select: none;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 1rem; }
+    .SHRadioButton label::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      box-sizing: border-box;
+      border-width: 0.0625rem;
+      border-style: solid;
+      border-radius: 50%; }
+    .SHRadioButton label::after {
+      content: "";
+      position: absolute;
+      top: 0.125rem;
+      left: 0.625rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      transition: transform 80ms cubic-bezier(0.4, 0, 1, 1);
+      transform: scale(0);
+      border-radius: 50%; }
+  .SHRadioButton input {
+    visibility: hidden;
+    position: absolute; }
+    .SHRadioButton input:checked + label::after {
+      transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      transform: scale(1); }
+  .SHRadioButton--touch {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+  .SHRadioButton:not(.SHRadioButton--touch) {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .SHRadioButton--lightScheme.SHRadioButton--disabled label {
+    color: rgba(0, 0, 0, 0.38); }
+    .SHRadioButton--lightScheme.SHRadioButton--disabled label::before {
+      border-color: rgba(0, 0, 0, 0.12); }
+  .SHRadioButton--lightScheme.SHRadioButton--disabled input:checked + label::after {
+    background-color: rgba(0, 0, 0, 0.12); }
+  .SHRadioButton--lightScheme:not(.SHRadioButton--disabled):hover label::before {
+    border-color: #D85808; }
+  .SHRadioButton--lightScheme:not(.SHRadioButton--disabled) label {
+    color: rgba(0, 0, 0, 0.54);
+    border-color: rgba(0, 0, 0, 0.48); }
+  .SHRadioButton--lightScheme:not(.SHRadioButton--disabled) input:checked + label::after {
+    background-color: #EC6602; }
+  .SHRadioButton--darkScheme.SHRadioButton--disabled label {
+    color: rgba(255, 255, 255, 0.5); }
+    .SHRadioButton--darkScheme.SHRadioButton--disabled label::before {
+      border-color: rgba(255, 255, 255, 0.12); }
+  .SHRadioButton--darkScheme.SHRadioButton--disabled input:checked + label::after {
+    background-color: rgba(255, 255, 255, 0.12); }
+  .SHRadioButton--darkScheme:not(.SHRadioButton--disabled):hover label::before {
+    border-color: #D85808; }
+  .SHRadioButton--darkScheme:not(.SHRadioButton--disabled) label {
+    color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.48); }
+  .SHRadioButton--darkScheme:not(.SHRadioButton--disabled) input:checked + label::after {
+    background-color: #EC6602; }

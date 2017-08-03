@@ -1,0 +1,9 @@
+<div [ngClass]="{'SHRadioButton--disabled': disabled,
+                 'SHRadioButton':true,
+                 'SHRadioButton--touch': isTouchDevice,
+                 'SHRadioButton--lightScheme' : isLight,
+                 'SHRadioButton--darkScheme' : !isLight,
+                 'SHRadioButton--withLabel': true}">
+ <input [attr.id]="radioid" [attr.name] = "name" type="radio" [attr.checked]="checked === 'true' ? '' : null" [attr.disabled]="disabled === 'true' ? '' : null"/>
+ <label [attr.for]="radioid">{{label}}</label>
+</div>
